@@ -23,7 +23,7 @@
         android:theme="@style/AppTheme.NoActionBar">
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="be16dface6bf1734aed7c5f1970d2780"/>
+            android:value="2aefd597eb31182e1925f28c184e9292"/><!--be16dface6bf1734aed7c5f1970d2780-->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

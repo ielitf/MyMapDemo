@@ -70,31 +70,22 @@ public class MainActivity extends AppCompatActivity {
 
         //绘制标记点marker
         LatLng latLng = new LatLng(39.906901,116.397972);
-        final Marker marker1 = aMap.addMarker(new MarkerOptions().position(new LatLng(39.906901,116.397972)).title("标记1").snippet("内容1"));
-//        final Marker marker2 = aMap.addMarker(new MarkerOptions().position(new LatLng(39.917930,116.498993)).title("标记2").snippet("内容2"));
-
+        final Marker marker1 = aMap.addMarker(new MarkerOptions().position(new LatLng(39.906901,116.397972)).title("标记1"));
+        marker1.showInfoWindow();
+        final Marker marker2 = aMap.addMarker(new MarkerOptions().position(new LatLng(39.926901,116.527972)).snippet("内容2").anchor(0.5f,0.5f));
+//        marker2.showInfoWindow();
         //自定义标记图标marker
         MarkerOptions markerOption = new MarkerOptions();
 //        markerOption.position(Constants.XIAN);
-        markerOption.position(new LatLng(39.926901,116.527972));
-        markerOption.title("标记3");
-
+        markerOption.position(new LatLng(39.917930,116.498993)).anchor(0.5f,0.5f);
+        markerOption.title("标记3").alpha(0.5f);//0 - 1. 1为不透明
         markerOption.draggable(false);//设置Marker可拖动
         markerOption.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
                 .decodeResource(getResources(),R.drawable.ic_launcher)));
         // 将Marker设置为贴地显示，可以双指下拉地图查看效果
-        markerOption.setFlat(true);//设置marker平贴地图效果
+        markerOption.setFlat(false);//设置marker平贴地图效果
 
         final Marker marker3 = aMap.addMarker(markerOption);
-////绘制面
-        LatLng latLng2 = new LatLng(39.917930,116.498993);
-        circle = aMap.addCircle(new CircleOptions().
-                center(latLng2).
-                radius(1000).
-                fillColor(R.color.main_nav_text).
-                fillColor(Color.argb(255, 255, 255, 1)).
-                strokeColor(Color.argb(255, 255, 1, 1)).
-                strokeWidth(15));
 
         //绘制标记线
         List<LatLng> latLngs = new ArrayList<LatLng>();
